@@ -1,39 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
- * main - Entry point
+ * main -  prints all possible different combinations of two digits
  *
- * Return: Always 0 (Success)
+ *depending on some conditions
+ *
+ * Return:0
  */
 
 int main(void)
 {
-int d, p, q;
-
-for (d = 0; d < 9; d++)
+int x, y, z;
+for (x = 0; x < 10; x++)
 {
-for (p = d + 1; p <= 9; p++)
+for (y = 0; y < 10; y++)
 {
-for (q = p + 1; q <= 9; q++)
+for (z = 0; z < 10; z++)
 {
-if ((p != d) != q)
+if (y > x && z > y)
 {
-putchar(d);
-putchar(p);
-putchar(q);
-
-if (d == 7 && p == 8)
-continue;
-
-putchar(,);
-putchar( );
+putchar(x + '0');
+putchar(y + '0');
+putchar(z + '0');
+if (x != 7 || y != 8 || z != 9)
+{
+putchar (',');
+putchar (' ');
 }
 }
 }
 }
-putchar(n);
-
+}
+putchar('\n');
 return (0);
-} 
+}

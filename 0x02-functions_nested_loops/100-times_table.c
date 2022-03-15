@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
 * print_times_table - Prints the n times table
@@ -40,7 +40,7 @@ _putchar(((op / 10) % 10) + 48);
 _putchar((op % 10) + 48);
 }
 }
-_putchar(n);
+_putchar("/n");
 }
 }
 }

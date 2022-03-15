@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
 * times_table - that prints the 9 times table
 *
@@ -27,6 +27,6 @@ _putchar((c / 10) + 48);
 _putchar((c % 10) + 48);
 }
 }
-_putchar('\n');
+_putchar(n);
 }
 }

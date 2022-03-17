@@ -1,30 +1,18 @@
 #include <stdio.h>
-
 /**
-*main- prints the largest prime factor
-*of a number
-*
-*Return: returns 0
-*/
-
+ * main - Prints out the larget prime factor of 612852475143
+ * Return:return 0 with success.
+ */
 int main(void)
 {
-    long number = 612852475143;
-    int inc;
+long i;
+long num = 612852475143;
 
-    while (inc++ < number / 2)
-    {
-        if (number % inc == 0)
-        {
-            number /= 2;
-            continue;
-        }
-        for (inc = 3; inc < number / 2; inc += 2)
-        {
-            if (number % inc == 0)
-                number /= inc;
-        }
-    }
-    printf("%ld\n", number);
-    return (0);
+for (i = 2; i < num; i++)
+{
+if (num % i == 0)
+num /= i;
+}
+printf("%li\n", num);
+return (0);
 }

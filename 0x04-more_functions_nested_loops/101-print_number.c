@@ -18,5 +18,5 @@ if (num > 9)
 {
 print_number(num / 10);
 }
-putchar(num % 10 + 0);
+putchar(num % 10 + '0');
 }

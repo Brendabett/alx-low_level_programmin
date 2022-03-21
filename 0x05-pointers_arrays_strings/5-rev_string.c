@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
 * rev_string - reverse a string
@@ -13,7 +13,7 @@ void rev_string(char *s)
 int left, i, temp;
 left = 0;
 i = 0;
-while (s[i] != 0)
+while (s[i] != '\0')
 {
 i++;
 }

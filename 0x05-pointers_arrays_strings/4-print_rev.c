@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
 * print_rev - prints reversed string, followed by a new line
@@ -15,5 +15,5 @@ while (i--)
 {
 _putchar(s[i]);
 }
-_putchar(n);
+_putchar('\n');
 }

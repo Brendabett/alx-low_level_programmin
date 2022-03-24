@@ -1,27 +1,31 @@
-#include "main.h"
-
 /**
- * rot13 - encodes a string in rot13
+ * *rot13 - encodes a string using rot13 encryption
  * @s: string to be encoded
  *
- * Return: the resulting string
+ * Return: pointer to encoded string
  */
 char *rot13(char *s)
 {
-int i, j;
+char nor[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+      'Z'};
+char rot[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+'m', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+      'M'};
+int count, len;
+char now;
 
-char a[] = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz;
-char b[] = NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm;
-
-for (i = 0; s[i] != '\0'; i++)
+for (len = 0; *(s + len) != '\0'; len++)
 {
-for (j = 0; a[j] != '\0'; j++)
+now = *(s + len);
+for (count = 0; count < 52; count++)
 {
-if (s[i] == a[j])
-{
-s[i] = b[j];
-break;
-}
+if (now == nor[count])
+*(s + len) = rot[count];
 }
 }
 

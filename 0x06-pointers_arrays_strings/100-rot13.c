@@ -1,4 +1,4 @@
-#include holberton.h
+#include "main.h"
 /**
  * *rot13 - function that encodes a string using rot13.
  * @s: pointer pointed to the variable s , of type character

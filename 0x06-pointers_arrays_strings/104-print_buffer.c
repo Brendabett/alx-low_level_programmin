@@ -20,7 +20,7 @@ int i = 0, j;
 
 if (size < 0)
 {
-printf(n);
+printf('\n');
 return;
 }
 
@@ -46,7 +46,7 @@ printf("%c", b[j]);
 else
 printf(".");
 }
-printf(n);
+printf('\n');
 i += 10;
 }
 }

@@ -1,46 +1,29 @@
-#include "main.h"
+#include holberton.h
 
 /**
- * rot13 - rot13 encoder
- * @str: string to be encoded
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
  *
- * Return: address of the encoded string
+ * Return: the resulting string
  */
-
-char *rot13(char *str)
+char *rot13(char *s)
 {
-int i = 0;
+int i, j;
 
-while (str[i] != '\0')
-{
-str[i] = transform_2(str[i]);
-i++;
-}
-return (str);
-}
+char a[] = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz;
+char b[] = NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm;
 
-/**
- * transform_2 - helper function to map a letter with it's rot13 encoding
- * @x: char to be encoded
- *
- * Return: the encoded char
- */
-
-char transform_2(char x)
+for (i = 0; s[i] != '\0'; i++)
 {
-char one[52] = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz;
-char two[52] = NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm;
-int i = 0;
-char replacement = x;
-
-while (i < 52)
+for (j = 0; a[j] != '\0'; j++)
 {
-if (x == one[i])
+if (s[i] == a[j])
 {
-replacement = two[i];
+s[i] = b[j];
 break;
 }
-i++;
 }
-return (replacement);
+}
+
+return (s);
 }

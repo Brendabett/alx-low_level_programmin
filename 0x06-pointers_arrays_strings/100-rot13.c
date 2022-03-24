@@ -1,35 +1,46 @@
-#include "main.h"
+#include main.h
 
 /**
- * *rot13 - encodes a string using rot13 encryption
- * @s: string to be encoded
+ * rot13 - rot13 encoder
+ * @str: string to be encoded
  *
- * Return: pointer to encoded string
+ * Return: address of the encoded string
  */
-char *rot13(char *s)
-{
-char nor[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
-      'Z'};
-char rot[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-'m', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
-'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-      'M'};
-int count, len;
-char now;
 
-for (len = 0; *(s + len) != '\0'; len++)
+char *rot13(char *str)
 {
-now = *(s + len);
-for (count = 0; count < 52; count++)
+int i = 0;
+
+while (str[i] != '\0')
 {
-if (now == nor[count])
-*(s + len) = rot[count];
+str[i] = transform_2(str[i]);
+i++;
 }
+return (str);
 }
 
-return (s);
+/**
+ * transform_2 - helper function to map a letter with it's rot13 encoding
+ * @x: char to be encoded
+ *
+ * Return: the encoded char
+ */
+
+char transform_2(char x)
+{
+char one[52] = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz;
+char two[52] = NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm;
+int i = 0;
+char replacement = x;
+
+while (i < 52)
+{
+if (x == one[i])
+{
+replacement = two[i];
+break;
+}
+i++;
+}
+return (replacement);
 }

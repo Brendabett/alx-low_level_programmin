@@ -18,7 +18,7 @@ for (j = 0; argv[i][j] != '\0'; j++)
 {
 if (argv[i][j] < '0' || argv[i][j] > '9')
 {
-printf(Errorn);
+printf("Error\n");
 return (1);
 }
 }

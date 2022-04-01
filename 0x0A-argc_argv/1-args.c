@@ -9,7 +9,7 @@
 
 int main(int argc, char __attribute__((__unused__)) *argv[])
 {
-0-whatsmyname.c printf("%d\n", argc - 1);
+printf("%d\n", argc - 1);
 
-0-whatsmyname.c return (0);
+return (0);
 }

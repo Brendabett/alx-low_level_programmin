@@ -1,4 +1,5 @@
-#include main.h
+#include "main.h"
+#include <stdlib.h>
 
 /**
  * len - returns length of str

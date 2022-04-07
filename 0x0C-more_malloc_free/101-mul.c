@@ -1,5 +1,4 @@
-#include main.h
-
+#include "main.h"
 
 /**
  * find_len - Finds the length of a string.
@@ -73,7 +72,7 @@ int digit = c - '0';
 
 if (digit < 0 || digit > 9)
 {
-printf(Errorn);
+printf("Error\n");
 exit(98);
 }
 
@@ -115,7 +114,7 @@ for (; mult_len >= 0; mult_len--, mult--, prod--)
 {
 if (*mult < '0' || *mult > '9')
 {
-printf(Errorn);
+printf("Error\n");
 exit(98);
 }
 
@@ -187,7 +186,7 @@ int size, index, digit, zeroes = 0;
 
 if (argc != 3)
 {
-printf(Errorn);
+printf("Error\n");
 exit(98);
 }
 
@@ -197,7 +196,7 @@ if (*(argv[2]) == '0')
 argv[2] = iterate_zeroes(argv[2]);
 if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 {
-printf(0n);
+printf("0\n");
 return (0);
 }
 

@@ -9,7 +9,7 @@
 *representing a dog
 *@name: name of dog
 *@age: age of dog
-*@owner: owners name
+*@owner: owner's name
 */
 struct dog
 {

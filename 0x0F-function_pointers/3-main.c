@@ -31,7 +31,7 @@ printf("Error\n");
 exit(99);
 }
 
-if ((*op == / && num2 == 0) || (*op == % && num2 == 0))
+if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
 {
 printf("Error\n");
 exit(100);

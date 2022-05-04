@@ -75,7 +75,7 @@ do {
 if (from == -1 || r == -1)
 {
 dprintf(STDERR_FILENO,
-"Error: Cant read from file %sn, argv[1]);
+"Error: Cant read from file %sn", argv[1]);
 free(buffer);
 exit(98);
 }
@@ -84,7 +84,7 @@ w = write(to, buffer, r);
 if (to == -1 || w == -1)
 {
 dprintf(STDERR_FILENO,
-Error: Cant write to %s\n", argv[2]);
+"Error: Cant write to %s\n", argv[2]);
 free(buffer);
 exit(99);
 }

@@ -19,8 +19,7 @@ buffer = malloc(sizeof(char) * 1024);
 
 if (buffer == NULL)
 {
-dprintf(STDERR_FILENO,
-"Error: Cant write to %sn, file);
+dprintf(STDERR_FILENO,"Error: Cant write to %sn, file);
 exit(99);
 }
 

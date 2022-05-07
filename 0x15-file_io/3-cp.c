@@ -15,7 +15,7 @@ void check97(int argc)
 {
 if (argc != 3)
 {
-dprintf(STDERR_FILENO, Usage: cp file_from file_ton);
+dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 exit(97);
 }
 }
@@ -33,7 +33,7 @@ void check98(ssize_t check, char *file, int fd_from, int fd_to)
 {
 if (check == -1)
 {
-dprintf(STDERR_FILENO, Error: Cant read from file %s\n", file);
+dprintf(STDERR_FILENO, "Error: Cant read from file %s\n", file);
 if (fd_from != -1)
 close(fd_from);
 if (fd_to != -1)
@@ -55,7 +55,7 @@ void check99(ssize_t check, char *file, int fd_from, int fd_to)
 {
 if (check == -1)
 {
-dprintf(STDERR_FILENO, "Error: Cant write to %sn, file);
+dprintf(STDERR_FILENO, "Error: Cant write to %s\n", file);
 if (fd_from != -1)
 close(fd_from);
 if (fd_to != -1)
@@ -75,7 +75,7 @@ void check100(int check, int fd)
 {
 if (check == -1)
 {
-dprintf(STDERR_FILENO, Error: Cant close fd %d\n", fd);
+dprintf(STDERR_FILENO, "Error: Cant close fd %d\n", fd);
 exit(100);
 }
 }
@@ -114,5 +114,4 @@ close_from = close(fd_from);
 check100(close_to, fd_to);
 check100(close_from, fd_from);
 return (0);
-}" > 3-cp.c
-
+}

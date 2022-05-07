@@ -73,7 +73,7 @@ exit(98);
 printf("ELF Header:\n  Magic:   ");
 
 for (i = 0; i < 16; ++i)
-printf("%02x%c", buffer[i], i < 15 ?   : n);
+printf("%02x%c", buffer[i], i < 15 ? ' ' : '\n');
 }
 
 /**
@@ -270,14 +270,14 @@ int fd;
 
 if (argc != 2)
 {
-write(STDERR_FILENO, Usage: elf_header elf_filenamen, 31);
+write(STDERR_FILENO, "Usage: elf_header elf_filename\n", 31);
 exit(98);
 }
 
 fd = open(argv[1], O_RDONLY);
 if (fd == -1)
 {
-write(STDERR_FILENO, Error: Cant read from file\n", 28);
+write(STDERR_FILENO, "Error: Cant read from file\n", 28);
 exit(98);
 }
 
@@ -299,6 +299,4 @@ elf_entry(buffer, bit_mode, big_endian);
 _close(fd);
 
 return (0);
-} >> 100-elf_header.c
-'
-
+} 

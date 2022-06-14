@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -P /tmp/ https://raw.github.com/Brendabett/alx-low_level_programming/master/0x18-dynamic_libraries/libgigamill.so
-export LD_PRELOAD =/tmp/libgigamill.so
+wget -P.. https://raw.githubusercontent.com/Brendabett/alx-low_level_programming/mastexport LD_PRELOAD="$PWD/../libgigamill.so
+export LD_PRELOAD="$PWD/../libgigamill.so"

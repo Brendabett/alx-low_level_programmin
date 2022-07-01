@@ -23,7 +23,7 @@ for (i = 0; i < ht->size; i++)
 tmp = ht->array[i];
 while (tmp != NULL)
 {
-printf("%s%s: %s", sep, tmp->key, tmp->value);
+printf("%s'%s': '%s'", sep, tmp->key, tmp->value);
 sep = ", ";
 tmp = tmp->next;
 }

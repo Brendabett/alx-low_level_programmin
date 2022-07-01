@@ -136,7 +136,7 @@ shash_node_t *new;
 if (ht == NULL)
 return (0);
 
-if (key == NULL || *key == 0)
+if (key == NULL || *key == '\0')
 return (0);
 
 k_index = key_index((unsigned char *)key, ht->size);
@@ -175,7 +175,7 @@ tmp = ht->array[k_index];
 
 while (tmp != NULL)
 {
-if (strcmp(tmp->key, key) == 0)
+if (strcmp(tmp->key, key) == '\0')
 return (tmp->value);
 tmp = tmp->next;
 }
@@ -204,7 +204,7 @@ tmp = ht->shead;
 
 while (tmp != NULL)
 {
-printf("%s%s: %s", sep, tmp->key, tmp->value);
+printf("%s'%s': '%s'", sep, tmp->key, tmp->value);
 sep = ", ";
 tmp = tmp->snext;
 }
@@ -234,7 +234,7 @@ tmp = ht->stail;
 
 while (tmp != NULL)
 {
-printf("%s%s: %s", sep, tmp->key, tmp->value);
+printf("%s'%s': '%s'", sep, tmp->key, tmp->value);
 sep = ", ";
 tmp = tmp->sprev;
 }
@@ -271,5 +271,3 @@ free(tmp2);
 free(ht->array);
 free(ht);
 }
-" > 100-sorted_hash_table.c
-

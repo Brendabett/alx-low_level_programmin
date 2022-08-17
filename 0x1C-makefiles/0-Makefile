@@ -1,4 +1,2 @@
-#************************ MAIN COMPILATION *************************
-
-all		:		
-				gcc main.c holberton.c -o holberton
+all:
+gcc main.c school.c -o school

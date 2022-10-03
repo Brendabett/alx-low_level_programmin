@@ -12,26 +12,26 @@
 int binary_search(int *array, size_t size, int value)
 {
 
-0-linear.c size_t i, left, right;
+size_t i, left, right;
 
-0-linear.c if (array == NULL)
-0-linear.c 0-linear.c return (-1);
+if (array == NULL)
+return (-1);
 
-0-linear.c for (left = 0, right = size - 1; right >= left;)
-0-linear.c {
-0-linear.c 0-linear.c printf("Searching in array: ");
-0-linear.c 0-linear.c for (i = left; i < right; i++)
-0-linear.c 0-linear.c 0-linear.c printf("%d, ", array[i]);
-0-linear.c 0-linear.c printf("%d\n", array[i]);
+for (left = 0, right = size - 1; right >= left;)
+{
+printf("Searching in array: ");
+for (i = left; i < right; i++)
+printf("%d, ", array[i]);
+printf("%d\n", array[i]);
 
-0-linear.c 0-linear.c i = left + (right - left) / 2;
-0-linear.c 0-linear.c if (array[i] == value)
-0-linear.c 0-linear.c 0-linear.c return (i);
-0-linear.c 0-linear.c if (array[i] > value)
-0-linear.c 0-linear.c 0-linear.c right = i - 1;
-0-linear.c 0-linear.c else
-0-linear.c 0-linear.c 0-linear.c left = i + 1;
-0-linear.c }
+i = left + (right - left) / 2;
+if (array[i] == value)
+return (i);
+if (array[i] > value)
+right = i - 1;
+else
+left = i + 1;
+}
 
-0-linear.c return (-1);
+return (-1);
 }

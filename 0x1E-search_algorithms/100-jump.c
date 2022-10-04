@@ -37,6 +37,6 @@ if (array[prev] == value)
 return (prev);
 prev++;
 }
-/* In the another case, the value doesnt exist in the array */
+/* In the another case, the value doesn't exist in the array */
 return (-1);
 }
